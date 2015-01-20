@@ -8,7 +8,7 @@ categories: blog
 
 送出Hello world ：
 
-{% highlight ruby %}
+{% highlight javascript %}
 # javascript hello world
 var HelloWorld = function() {
     this.title = 'hello world';
