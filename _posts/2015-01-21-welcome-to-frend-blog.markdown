@@ -6,7 +6,7 @@ categories: blog
 ---
 本博客使用Jekyll搭建。目前十分简陋，将逐步完善。斯是陋室，唯吾德馨 >。<
 
-送出Hello wordl：
+送出Hello world ：
 
 {% highlight ruby %}
 # javascript hello world
