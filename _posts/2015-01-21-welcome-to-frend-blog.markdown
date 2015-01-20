@@ -9,7 +9,9 @@ categories: blog
 送出Hello world ：
 
 {% highlight javascript %}
-# javascript hello world
+/*
+ javascript hello world
+*/
 var HelloWorld = function() {
     this.title = 'hello world';
     this.content = 'hello Frend!';
