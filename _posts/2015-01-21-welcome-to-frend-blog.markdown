@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Frend's blog!"
+title:  "欢迎来到Frend的博客"
 date:   2015-01-21 01:28:08
 categories: blog
 ---
