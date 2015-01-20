@@ -15,8 +15,8 @@ var HelloWorld = function() {
 	this.content = 'hello Frend!';
 }
 
-var helloWrold = new HelloWorld();
+var helloWorld = new HelloWorld();
 
-alert(helloWrold.title + helloWorld.content);
+alert(helloWrold.title + '-' + helloWorld.content);
 
 {% endhighlight %}
