@@ -1,3 +1,3 @@
-###Frend's blog
+###My blog
 
-Frend's blog : [frend.cc](http://frend.cc)
+blog url : [frend.cc](http://frend.cc)
