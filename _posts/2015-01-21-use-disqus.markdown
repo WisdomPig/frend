@@ -9,7 +9,6 @@ categories: blog
 
 ###1. Disqus账号
 使用Disqus需要账号，按注册流程走一遍，如果有gmail账号的就直接用gmail登陆也是可以滴。
-
 注册完，接下来会让你输入你准备使用的二级域名，因为我的域名是frend.cc，我就填了frendcc。
 
 
@@ -69,6 +68,8 @@ frendcc.disqus.com/embed.js 指向 a.disqus.com/embed.js
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 {% endhighlight %}
+
+以上是简单介绍怎样在博客接入Disqus，由于目前认识有限，一些描述或者方法上可能会不太准确，欢迎指正。
 
 
 
