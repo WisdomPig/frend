@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "html5 data-* 自定义属性的使用"
+description: "html5增加了自定义属性，通过data-*的形式进行定义，当我们使用jQuery的API去操作自定义属性的时候需要区分data()与attr()。"
+keywords: "html5, jquery, api, data-*, 自定义属性"
+date:   2015-01-26 00:04:30
+categories: blog
+---
