@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "欢迎来到Frend的博客"
+description: "这是Frend的博客，使用Jekyll搭建，用作个人博客分享。"
+keywords: "frend, blog, jekyll"
 date:   2015-01-21 01:28:08
 categories: blog
 ---

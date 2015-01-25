@@ -1,11 +1,13 @@
 ---
 layout: post
 title:  "Disqus的接入"
+description: "Disqus为不同平台搭建的系统提供了接口，本文介绍了如何在Jekyll下搭建的博客系统中使用Disqus，给出了具体的实现方法。"
+keywords: "disqus, jekyll, javascript"
 date:   2015-01-21 23:41:08
 categories: blog
 ---
 
-博客的大体框架搭好了，没有评论功能感觉太不专业，果断接入Disqus @。@
+博客的大体框架搭好了，没有评论功能感觉太low，果断接入Disqus @。@
 
 ###1. Disqus账号
 使用Disqus需要账号，按注册流程走一遍，如果有gmail账号的就直接用gmail登陆也是可以滴。
