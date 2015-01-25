@@ -6,3 +6,11 @@ keywords: "html5, jquery, api, data-*, 自定义属性"
 date:   2015-01-26 00:04:30
 categories: blog
 ---
+
+###1. html5新增的自定义的属性data-*
+
+###2. jQuery的缓存机制
+
+###3. jQuery的data()与attr()
+
+###4. 操作data-*自定义属性的总结
