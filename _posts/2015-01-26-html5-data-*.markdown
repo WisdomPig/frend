@@ -7,7 +7,7 @@ date:   2015-01-26 00:04:30
 categories: blog
 ---
 
-###1. html5新增的自定义的属性data-*
+###1. html5新增的自定义属性data-*
 
 ###2. jQuery的缓存机制
 
