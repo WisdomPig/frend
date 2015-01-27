@@ -11,13 +11,13 @@ categories: blog
 
 html5提供了自定义属性，使用规则为`data-attribute-name = value`
 
-#####1.1 操作自定义属性
->HTML
+####1.1 操作自定义属性
+>html
 {% highlight html %}
 <p id="sunflower" data-leaves="32" data-plant-height="2.0m"></p>
 {% endhighlight %}
 
->JAVASCRIPT
+>javascript
 {% highlight javascript %}
 var plant = document.getElementById('sunflower');
 var leaves = plant.dataset.leaves; // leaves = 32;
