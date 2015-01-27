@@ -9,7 +9,20 @@ categories: blog
 
 ###1. html5自定义属性data-*
 
-html5提供了自定义属性，顾名思义，属性的名字与值都是由我们定义的，使用规则为`data-attribute-name = value`
+html5提供了自定义属性，使用规则为`data-attribute-name = value`
+
+#####1.1 操作自定义属性
+>HTML
+{% highlight html %}
+<p id="sunflower" data-leaves="32" data-plant-height="2.0m"></p>
+{% endhighlight %}
+
+>JAVASCRIPT
+{% highlight javascript %}
+var plant = document.getElementById('sunflower');
+var leaves = plant.dataset.leaves; // leaves = 32;
+var tallness = plant.dataset.plantHeight; // 'plant-height' -> 'plantHeight'
+{% endhighlight %}
 
 ###2. jQuery的缓存机制
 
