@@ -7,17 +7,17 @@ date:   2015-01-26 00:04:30
 categories: blog
 ---
 
->###1. html5自定义属性data-*
+###1. html5自定义属性data-*
 
->html5提供了自定义属性，使用规则为`data-attribute-name = value`
+html5提供了自定义属性，使用规则为`data-attribute-name = value`
 
 >####1.1 操作自定义属性
->html
+html
 {% highlight html %}
 <p id="sunflower" data-leaves="32" data-plant-height="2.0m"></p>
 {% endhighlight %}
 
->javascript
+javascript
 {% highlight javascript %}
 var plant = document.getElementById('sunflower');
 var leaves = plant.dataset.leaves; // leaves = 32;
