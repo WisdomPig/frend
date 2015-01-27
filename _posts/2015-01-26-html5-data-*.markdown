@@ -25,7 +25,7 @@ var tallness = plant.dataset.plantHeight; // 'plant-height' -> 'plantHeight'
 plant.dataset.plantHeight = '3.6m'; // reset plant-height
 {% endhighlight %}
 
-`注意点：`自定义属性单词间不能使用驼峰式写法，单词间需要使用`-`中横线进行分割，在操作自定义属性时，则使用驼峰式写法（规则与JS中样式的操作类似）
+`注意点:`自定义属性单词间不能使用驼峰式写法，单词间需要使用`-`中横线进行分割，在操作自定义属性时，则使用驼峰式写法（规则与JS中样式的操作类似）
 
 ###2. jQuery的缓存机制
 
