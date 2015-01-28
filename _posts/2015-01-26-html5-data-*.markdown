@@ -25,20 +25,32 @@ var tallness = plant.dataset.plantHeight; // 'plant-height' -> 'plantHeight'
 plant.dataset.plantHeight = '3.6m'; // reset plant-height
 {% endhighlight %}
 
-`注意点:`自定义属性单词间不能使用驼峰式写法，单词间需要使用`-`中横线进行分割，在操作自定义属性时，则使用驼峰式写法（规则与JS中样式的操作类似）
-  
-  
-  
+`注意点:`自定义属性单词间不能使用驼峰式写法，单词间需要使用`-`中横线进行分割，在操作自定义属性时，则使用驼峰式写法（规则与JS中样式的操作相似）
+
+<br/><br/>
+
 ###2. jQuery的缓存机制
 
 这里之所以要讲jQuery的缓存机制，全因jQuery的data()函数。关于data()函数的介绍与使用，将在下个小节介绍，同时会结合attr()函数进行说明。
 
->####2.1 jQuery强大的缓存功能
-  
-  
-  
+>####2.1 jQuery对数据的缓存
+
+<br/><br/>
+
 ###3. jQuery的data()与attr()
-  
-  
-  
+
+<br/><br/>
+
 ###4. 操作data-*自定义属性的总结
+
+
+
+
+
+
+
+
+
+
+
+
