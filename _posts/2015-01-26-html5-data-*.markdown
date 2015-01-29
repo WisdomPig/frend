@@ -55,7 +55,14 @@ jQuery.extend({
 
 >#####2.1.2 jQuery.uuid
 
+自增唯一的数字。
 
+>#####2.1.3 jQuery.expando
+
+字符串，使用Math.random生成，去掉了非数字字符。它作为HTMLElement或JS对象的属性名。如下代码片段：
+{% highlight javascript %}
+expando: "jQuery" + ( jQuery.fn.jquery + Math.random() ).replace( /\D/g, "" ),
+{% endhighlight %}
 
 ---
 读取数据：$(Element).data('demo');
