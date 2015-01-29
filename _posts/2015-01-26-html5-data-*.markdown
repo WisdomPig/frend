@@ -49,6 +49,14 @@ jQuery.extend({
 });
 {% endhighlight %}
 
+>#####2.1.1 jQuery.cache
+
+空对象，用来缓存。
+
+>#####2.1.2 jQuery.uuid
+
+
+
 ---
 读取数据：$(Element).data('demo');
 如果读取不到，读取HTML5的dataset数据并挂载到jQuery.cache中。
