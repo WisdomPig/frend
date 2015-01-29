@@ -61,10 +61,13 @@ jQuery.extend({
 
 字符串，使用Math.random生成，去掉了非数字字符。它作为HTMLElement或JS对象的属性名。如下代码片段：
 {% highlight javascript %}
-expando: ‘jQuery’ + ( jQuery.fn.jquery + Math.random() ).replace(/\D/g, ‘’),
+expando: 'jQuery' + ( jQuery.fn.jquery + Math.random() ).replace(/\D/g, ''),
 {% endhighlight %}
 
+>####2.2 jQuery缓存与元素关联
 
+在2.1中介绍了jQuery用来实现缓存的一些基本属性，那么jQuery的缓存是如何与元素关联起来的呢？
+这就靠2.1.3中的`jQuery.expando`了。
 
 <br/>
 
