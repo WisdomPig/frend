@@ -54,7 +54,7 @@ __jQuery.cache__ 空对象，用来缓存。
 __jQuery.uuid__ 自增唯一的数字。
 
 __jQuery.expando__ 字符串，使用Math.random生成，去掉了非数字字符。它作为HTMLElement或JS对象的属性名。如下代码片段：
-<br/>
+
 html
 {% highlight html %}
 <p id="sunflower" jQuery1502102101></p>
@@ -72,6 +72,7 @@ expando: 'jQuery' + ( jQuery.fn.jquery + Math.random() ).replace(/\D/g, ''),
 >####3.1 jQuery的data()方法
 
 jQuery.fn.data(name, value)是一个getter/setter方法。
+
 html
 {% highlight html %}
 <p id="sunflower" data-leaves="42"></p>
