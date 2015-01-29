@@ -61,13 +61,10 @@ jQuery.extend({
 
 字符串，使用Math.random生成，去掉了非数字字符。它作为HTMLElement或JS对象的属性名。如下代码片段：
 {% highlight javascript %}
-expando: "jQuery" + ( jQuery.fn.jquery + Math.random() ).replace( /\D/g, "" ),
+expando: ‘jQuery’ + ( jQuery.fn.jquery + Math.random() ).replace(/\D/g, ‘’),
 {% endhighlight %}
 
----
-读取数据：$(Element).data('demo');
-如果读取不到，读取HTML5的dataset数据并挂载到jQuery.cache中。
----
+
 
 <br/>
 
@@ -76,6 +73,11 @@ expando: "jQuery" + ( jQuery.fn.jquery + Math.random() ).replace( /\D/g, "" ),
 <br/>
 
 ###4. 操作data-*自定义属性的总结
+
+---
+读取数据：$(Element).data('demo');
+如果读取不到，读取HTML5的dataset数据并挂载到jQuery.cache中。
+---
 
 
 
