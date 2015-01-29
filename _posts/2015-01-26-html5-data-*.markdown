@@ -80,19 +80,9 @@ html
 
 javascript
 {% highlight javascript %}
-var leaves = $('#sunflower').data('leaves'); //42
+var leaves = $('#sunflower').data('leaves'); //42，data()方法会先去jQuery.cache读取data-leaves的值，读取不到，便读取html5的dataset数据并挂载到jQuery.cache中。
 $('#sunflower').data('plant-height', '3.6m'); //data-leavesplant-height=3.6m 存储在jQuery的cache里，DOM元素依然显示为<p id="sunflower" data-leaves="42"></p>
 {% endhighlight %}
-
-<br/>
-
-###4. 操作data-*自定义属性的总结
-
----
-读取数据：$(Element).data('demo');
-如果读取不到，读取HTML5的dataset数据并挂载到jQuery.cache中。
----
-
 
 
 
