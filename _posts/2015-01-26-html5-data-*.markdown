@@ -25,9 +25,9 @@ var tallness = plant.dataset.plantHeight; // 'plant-height' -> 'plantHeight'
 plant.dataset.plantHeight = '3.6m'; // reset plant-height
 {% endhighlight %}
 
-`注意点`自定义属性单词间不能使用驼峰式写法，单词间需要使用`-`中横线进行分割，在操作自定义属性时，则使用驼峰式写法（规则与JS中样式的操作相似）
+`注意点` 自定义属性单词间不能使用驼峰式写法，单词间需要使用`-`中横线进行分割，在操作自定义属性时，则使用驼峰式写法（规则与JS中样式的操作相似）
 
-<br/><br/>
+<br/>
 
 ###2. jQuery的缓存机制
 
@@ -35,17 +35,30 @@ plant.dataset.plantHeight = '3.6m'; // reset plant-height
 
 >####2.1 jQuery对数据的缓存
 
-`问题场景`在实现一些逻辑功能，例如动画的时候，会涉及很多数据的缓存，其中一种处理方法是在DOM元素上添加自定义属性来保存数据，这样可以很方便的访问到数据队列。但是给DOM元素添加过多的自定义属性和数据可能会引起内存泄漏，特别是在旧版本的IE浏览器下，所以尽量要避免这样干。
+`问题场景` 在实现一些逻辑功能，例如动画的时候，会涉及很多数据的缓存，其中一种处理方法是在DOM元素上添加自定义属性来保存数据，这样可以很方便的访问到数据队列。但是给DOM元素添加过多的自定义属性和数据可能会引起内存泄漏，特别是在旧版本的IE浏览器下，所以尽量要避免这样干。
 
-`解决思路`使用js对象进行数据的缓存，通过唯一的ID将DOM元素与数据对应起来。
+`解决思路` 使用js对象进行数据的缓存，通过唯一的ID将DOM元素与数据对应起来。
 
-`jQuery缓存的实现`
+`jQuery缓存的实现` jQuery在1.2.3后引入了jQuery.data（数据缓存系统），提供了data方法来存储数据（removeData用来删除数据），如下代码片段（1.6.1）：
+{% highlight javascript %}
+jQuery.extend({
+    cache: {},
+    uuid: 0,
+    expando: '',
+    ...
+});
+{% endhighlight %}
 
-<br/><br/>
+---
+读取数据：$(Element).data('demo');
+如果读取不到，读取HTML5的dataset数据并挂载到jQuery.cache中。
+---
+
+<br/>
 
 ###3. jQuery的data()与attr()
 
-<br/><br/>
+<br/>
 
 ###4. 操作data-*自定义属性的总结
 
