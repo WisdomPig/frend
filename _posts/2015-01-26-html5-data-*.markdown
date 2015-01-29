@@ -71,7 +71,7 @@ expando: 'jQuery' + ( jQuery.fn.jquery + Math.random() ).replace(/\D/g, ''),
 
 >####3.1 jQuery的data()方法
 
-jQuery.fn.data(name, value)是一个getter/setter方法。
+jQuery.fn.data(name[, value])是一个getter/setter方法。
 
 html
 {% highlight html %}
@@ -81,10 +81,39 @@ html
 javascript
 {% highlight javascript %}
 var leaves = $('#sunflower').data('leaves'); //42，data()方法会先去jQuery.cache读取data-leaves的值，读取不到，便读取html5的dataset数据并挂载到jQuery.cache中。
-$('#sunflower').data('plant-height', '3.6m'); //data-leavesplant-height=3.6m 存储在jQuery的cache里，DOM元素依然显示为<p id="sunflower" data-leaves="42"></p>
+$('#sunflower').data('plant-height', '3.6m'); //data-leavesplant-height=3.6m 存储在jQuery.cache里，DOM元素依然显示为<p id="sunflower" data-leaves="42"></p>
 {% endhighlight %}
 
+>####3.2 jQuery的attr()方法
 
+jQuery.fn.attr(name[, value])也是一个getter/setter方法。
+
+html
+{% highlight html %}
+<p id="sunflower" data-leaves="42"></p>
+{% endhighlight %}
+
+javascript
+{% highlight javascript %}
+var leaves = $('#sunflower').attr('data-leaves'); //42，attr()方法直接获取DOM元素的data-leaves属性的值
+$('#sunflower').attr('plant-height', '3.6m'); //DOM元素变为<p id="sunflower" data-leaves="42" data-plant-height="3.6m"></p>
+{% endhighlight %}
+
+>####3.3 jQuery的data()与attr()比较
+
+从3.1、3.2中可以看到，data()方法其实是操作jQuery.cache，而attr()方法则是直接操作DOM元素的属性，那么两者会互相影响吗？
+
+html
+{% highlight html %}
+<p id="sunflower" data-leaves="42"></p>
+{% endhighlight %}
+
+javascript
+{% highlight javascript %}
+$('#sunflower').data('leaves', 44);	//data()方法将data-leaves的值44加入了jQuery.cache中
+var leaves = $('#sunflower').attr('data-leaves'); //42，attr()方法直接获取DOM元素的data-leaves属性的值
+$('#sunflower').data('leaves'); //44
+{% endhighlight %}
 
 
 
