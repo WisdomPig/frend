@@ -29,4 +29,28 @@ global.name = 'Frend';
 :::under nodejs
 //module_a.js
 
+exports.name = 'Frend';
+
+exports.say = function() {
+	console.log(name);
+}
 {% endhighlight %}
+
+使用require方法，加载module_a.js
+
+{% highlight javascript %}
+:::under nodejs
+//main.js
+
+var module_a = require('./module_a.js');
+
+module_a.say(); //Frend
+{% endhighlight %}
+
+
+
+
+
+
+
+
