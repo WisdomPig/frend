@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "seajs学习之路 - AMD与CMD"
-description: "seajs是国人出品的模块化加载器，学习seajs，了解前端js模块化编程"
-keywords: "seajs, cmd, amd"
+description: "学习seajs，了解前端js模块化编程，CommonJS、AMD与CMD的比较"
+keywords: "seajs, CMD, AMD, CommonJS, nodejs"
 date:   2015-02-01 00:06:10
 categories: seajs
 ---
@@ -13,17 +13,20 @@ categories: seajs
 
 ###1. 关于CommonJS
 
-CommonJS是服务器端模块化的规范，我们耳熟的Node.js就是基于这个规范的。
+CommonJS是服务器端模块化的规范，我们耳熟的Node.js就是基于CommonJS Modules/1.0。
 
 根据CommonJS规范，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，在改模块内定义的变量无法被其他模块所读取，除非定义为global对象的属性。
 
 {% highlight javascript %}
+:::under nodejs
+//main.js
 global.name = 'Frend';
 {% endhighlight %}
 
-以上定义的name变量可以被所有的模块所读取，但是并不推荐这种方式。输出模块的变量，最好的方式是使用exports(module.exports)对象。关于`exports与module.exports的区别`推荐看[一位全栈码农对exports与module.exports的分析](http://zihua.li/2012/03/use-module-exports-or-exports-in-node/)
+以上定义的name变量可以被所有的模块所读取，但是并不推荐这种方式。输出模块的变量，最好的方式是使用exports(module.exports)对象。关于`exports与module.exports的区别`推荐看[一位全栈码农对exports与module.exports的分析](http://zihua.li/2012/03/use-module-exports-or-exports-in-node/)。
 
 {% highlight javascript %}
+:::under nodejs
 //module_a.js
 
 {% endhighlight %}
