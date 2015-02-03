@@ -21,7 +21,7 @@ CommonJS是服务器端模块化的规范，我们耳熟的Node.js就是基于�
 global.name = 'Frend';
 {% endhighlight %}
 
-以上定义的name变量可以被所有的模块所读取，但是并不推荐这种方式。输出模块的变量，最好的方式是使用exports(module.exports)对象。关于`exports与module.exports的区别`推荐看[一位全栈码农的解析](http://zihua.li/2012/03/use-module-exports-or-exports-in-node/)
+以上定义的name变量可以被所有的模块所读取，但是并不推荐这种方式。输出模块的变量，最好的方式是使用exports(module.exports)对象。关于`exports与module.exports的区别`推荐看[一位全栈码农对exports与module.exports的分析](http://zihua.li/2012/03/use-module-exports-or-exports-in-node/)
 
 {% highlight javascript %}
 //module_a.js
