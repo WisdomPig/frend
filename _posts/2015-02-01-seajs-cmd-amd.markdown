@@ -60,7 +60,9 @@ AMD（Asynchronous Module Definition）规范则是异步加载模块，即模�
 ####define(id?, dependencies?, factory)
 
 `id` 为可选参数，字符串类型，表示当前模块的标识。
+
 `dependencies` 可选参数，当前模块所依赖并已经被定义的模块标志的数组字面量。
+
 `factory` 一个模块需要执行一次的函数或者是分配了模块属性的的对象。
 
 
