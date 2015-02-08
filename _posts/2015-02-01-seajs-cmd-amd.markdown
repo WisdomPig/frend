@@ -50,7 +50,19 @@ module_a.say(); //Frend
 
 
 ###2. 什么是AMD？
-从[1. 什么是CommonJS](#commonjs)已经初步了解了CommonJS，它加载模块时是同步的，也就是说，只有加载完成才会开始执行后面的操作。由于Node.js主要是用于服务器编程，模块文件一般是存放在服务器硬盘，所以加载会非常的快，不用考虑浏览器请求脚本时造成阻塞等的情况，所以CommonJS规范比较适用。但是，如果是在浏览器，要从服务器加载模块，则必须采用非同步模式。而AMD（Asynchronous Module Definition）规范则是非同步加载模块，并允许指定回调函数。
+从[#什么是CommonJS#](#commonjs)已经初步了解了CommonJS，它加载模块时是同步的，也就是说，只有加载完成才会开始执行后面的操作。由于Node.js主要是用于服务器编程，模块文件一般是存放在服务器硬盘，所以加载会非常的快，不用考虑像浏览器请求脚本时造成阻塞等的情况，所以CommonJS规范比较适用。但是，如果是在浏览器，要从服务器加载模块，则必须采用非同步模式。
+
+AMD（Asynchronous Module Definition）规范则是异步加载模块，即模块的加载不会影响后面语句的运行。所有依赖于某些模块的语句均放在回调函数中执行。
+[AMD规范](https://github.com/amdjs/amdjs-api/wiki/AMD)
+
+>###2.1 AMD的全局变量 —— define函数
+
+#####define(id?, dependencies?, factory)
+
+`id` 为可选参数，字符串类型，表示当前模块的标识。
+`dependencies` 可选参数，当前模块所依赖并已经被定义的模块标志的数组字面量。
+`factory` 一个模块需要执行一次的函数或者是分配了模块属性的的对象。
+
 
 
 
