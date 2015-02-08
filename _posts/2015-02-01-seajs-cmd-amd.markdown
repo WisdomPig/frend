@@ -11,7 +11,7 @@ categories: seajs
 
 随着公司项目越来越大，前端近无规范的协作，不管是代码维护还是新功能模块的添加，都越显困难与无力。所以，我铁定了心来研究seajs与requirejs这类的模块加载器的实现原理以及模块化编程。这不管对于公司项目的发展与维护，还是提升自身的能力，都有很大的好处。所以，别再想了，干吧！
 
-###1. 关于CommonJS
+###1. 什么是CommonJS？
 
 CommonJS是服务器端模块化的规范，我们耳熟的Node.js就是基于CommonJS Modules/1.0。
 
@@ -20,6 +20,7 @@ CommonJS是服务器端模块化的规范，我们耳熟的Node.js就是基于Co
 {% highlight javascript %}
 :::under nodejs
 //main.js
+
 global.name = 'Frend';
 {% endhighlight %}
 
@@ -46,6 +47,10 @@ var module_a = require('./module_a.js');
 
 module_a.say(); //Frend
 {% endhighlight %}
+
+
+###2. 什么是AMD？
+从[1. 什么是CommonJS](#commonjs)已经初步了解了CommonJS，它加载模块时是同步的，也就是说，只有加载完成才会开始执行后面的操作。由于Node.js主要是用于服务器编程，模块文件一般是存放在服务器硬盘，所以加载会非常的快，不用考虑浏览器请求脚本时造成阻塞等的情况，所以CommonJS规范比较适用。但是，如果是在浏览器，要从服务器加载模块，则必须采用非同步模式。而AMD（Asynchronous Module Definition）规范则是非同步加载模块，并允许指定回调函数。
 
 
 
