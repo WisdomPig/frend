@@ -6,6 +6,8 @@ keywords: "seajs, CMD, AMD, CommonJS, nodejs"
 date:   2015-02-01 00:06:10
 categories: seajs
 ---
+`AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。<br/>
+CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。`
 
 第一次听说seajs，已经是两年前的事了，但一直没有机会让我意识到模块化对于前端开发的好处，所以也没有深入去了解使用seajs或者requirejs这类的模块加载器进行模块化编程。
 
