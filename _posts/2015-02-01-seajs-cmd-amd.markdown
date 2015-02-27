@@ -32,7 +32,7 @@ CommonJS是服务器端模块化的规范，Node.js就是基于CommonJS Modules/
 global.name = 'Frend';
 {% endhighlight %}
 
-以上定义的name变量可以被所有的模块所读取，但是并不推荐这种方式。输出模块的变量，最好的方式是使用exports(module.exports)对象。关于`exports与module.exports的区别`推荐看[一位全栈码农对exports与module.exports的分析](http://zihua.li/2012/03/use-module-exports-or-exports-in-node/)。
+以上定义的name变量可以被所有的模块所读取，但是并不推荐这种方式。输出模块的变量，最好的方式是使用exports(module.exports)对象。关于`exports与module.exports的区别`推荐看[一位全栈码农对exports与module.exports的分析](http://zihua.li/2012/03/use-module-exports-or-exports-in-node/)。如果这篇博文让你还是理解不了，那给出一个更加浅显的说明：exports一般是一个对象，用于挂一堆的方法或者属性，例如一个slider滑动模块，有一堆的控制方法和属性，这种情况下就可以用exports来挂载，而另外一种情况，例如这个模块是叫$G.dom.get，实现和jquery的$()一样的功能，这时候不需要额外的一些乱七八糟的东西，只需要它是个方法，能直接调用，这时就可以使用module.exports了，调用的时候就可以直接通过$get = require( './dom/get' ); $get方法来使用了。
 
 {% highlight javascript %}
 :::under nodejs
