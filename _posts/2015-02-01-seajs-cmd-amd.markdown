@@ -17,6 +17,8 @@ categories: seajs
 
 随着公司项目越来越大，不管是代码维护还是新功能模块的添加，都越显困难与无力。模块化编程现在已经非常成熟，很多大的公司项目已经在使用，例如QQ空间、淘宝等。模块化编程在发展过程中，已经形成了多套规范以及基于不同规范的框架。本博文是我在探讨这些规范以及模块化框架过程中记录的一些关键点，已作备忘使用。
 
+<br/>
+
 ###1. 什么是CommonJS？
 
 CommonJS是服务器端模块化的规范，Node.js就是基于CommonJS Modules/1.0。
@@ -49,11 +51,12 @@ exports.say = function() {
 :::under nodejs
 //main.js
 
-var module_a = require('./module_a.js');
+var module_a = require('./module_a.js');    //同步加载模块，加载完再执行后面的代码
 
 module_a.say(); //Frend
 {% endhighlight %}
 
+<br/>
 
 ###2. 什么是AMD？
 从[#什么是CommonJS#](#commonjs)已经初步了解了CommonJS，它加载模块时是同步的，也就是说，只有加载完成才会开始执行后面的操作。由于Node.js主要是用于服务器编程，模块文件一般是存放在服务器硬盘，所以加载会非常的快，不用考虑像浏览器请求脚本时造成阻塞等的情况，所以CommonJS规范比较适用。但是，如果是在浏览器，要从服务器加载模块，带宽是主要的瓶颈，所以AMD规范提倡的异步加载模块的方式比较适用。
