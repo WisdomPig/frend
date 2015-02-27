@@ -74,6 +74,36 @@ AMD（Asynchronous Module Definition）规范则是异步加载模块，即模�
 
 `factory` 一个模块需要执行一次的函数或者是分配了模块属性的的对象。
 
+创建模块标识为alpha的模块，依赖于require，export，和标识为beta的模块
+{% highlight javascript %}
+define('alpha', ['require', 'exports', 'beta'], function(require, exports, beta) {
+    export.verb = function() {
+        return beta.verb();
+        // or:
+        return require('beta').verb();
+    }
+});
+{% endhighlight %}
+
+一个返回对象字面量的异步模块
+{% highlight javascript %}
+define(['alpha'], function(alpha) {
+    return {
+        verb : function() {
+            return alpha.verb() + 1 ;
+        }
+    }
+});
+{% endhighlight %}
+
+无依赖模块可以直接使用对象字面量来定义
+{% highlight javascript %}
+define({
+    add : function(x, y) {
+        return x + y;
+    }
+});
+{% endhighlight %}
 
 
 
