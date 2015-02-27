@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "seajs学习之路 - AMD与CMD"
+title:  "seajs学习之路 - CommonJS、AMD与CMD"
 description: "学习seajs，了解前端js模块化编程，CommonJS、AMD与CMD的比较"
 keywords: "seajs, CMD, AMD, CommonJS, nodejs"
 date:   2015-02-01 00:06:10
