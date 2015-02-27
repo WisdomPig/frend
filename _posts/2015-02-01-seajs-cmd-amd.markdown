@@ -19,7 +19,7 @@ categories: seajs
 
 <br/>
 
-###1. 什么是CommonJS？
+###1. CommonJS规范
 
 CommonJS是服务器端模块化的规范，Node.js就是基于CommonJS Modules/1.0。
 
@@ -58,8 +58,8 @@ module_a.say(); //Frend
 
 <br/>
 
-###2. 什么是AMD？
-从[#什么是CommonJS#](#commonjs)已经初步了解了CommonJS，它加载模块时是同步的，也就是说，只有加载完成才会开始执行后面的操作。由于Node.js主要是用于服务器编程，模块文件一般是存放在服务器硬盘，所以加载会非常的快，不用考虑像浏览器请求脚本时造成阻塞等的情况，所以CommonJS规范比较适用。但是，如果是在浏览器，要从服务器加载模块，带宽是主要的瓶颈，所以AMD规范提倡的异步加载模块的方式比较适用。
+###2. AMD规范与RequireJS
+从[#CommonJS规范#](#commonjs)已经初步了解了CommonJS，它加载模块时是同步的，也就是说，只有加载完成才会开始执行后面的操作。由于Node.js主要是用于服务器编程，模块文件一般是存放在服务器硬盘，所以加载会非常的快，不用考虑像浏览器请求脚本时造成阻塞等的情况，所以CommonJS规范比较适用。但是，如果是在浏览器，要从服务器加载模块，带宽是主要的瓶颈，所以AMD规范提倡的异步加载模块的方式比较适用。
 
 AMD（Asynchronous Module Definition）规范则是异步加载模块，即模块的加载不会影响后面语句的运行。所有依赖于某些模块的语句均放在回调函数中执行。
 [AMD规范](https://github.com/amdjs/amdjs-api/wiki/AMD)
@@ -116,6 +116,31 @@ define(function(require, exports, module) {
 {% endhighlight %}
 
 >###2.2 AMD的require函数
+
+* require(String)
+{% highlight javascript %}
+define(function(require) {
+    var a = require('a');   //加载模块a
+});
+{% endhighlight %}
+
+* require(Array, Function)
+{% highlight javascript %}
+define(function(require) {
+    require(['a', 'b'], function(a, b) {    //加载模块a b 使用
+        //依赖 a b 模块的运行代码
+    }); 
+});
+{% endhighlight %}
+
+* require.toUrl(Url)
+{% highlight javascript %}
+define(function(require){
+    var temp = require.toUrl('./temp/a.html');  //加载页面
+});
+{% endhighlight %}
+
+>###2.3 RequireJS —— 基于AMD的前端模块化管理工具库
 
 
 
