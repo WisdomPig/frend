@@ -143,6 +143,48 @@ define(function(require){
 <br/>
 
 ###3. CMD规范
+CMD（Common Module Definition）规范是SeaJS的规范产出，明确了模块的基本书写格式和基本交互规则。
+
+在该规范中，一个模块就是一个文件。
+
+>###3.1 CMD的全局变量 —— define函数
+
+####define(id?, dependencies?, factory)
+
+`id`为可选参数，字符串类型，表示当前模块的标识。
+
+`dependencies`为可选参数，数组类型，表示当前模块的依赖。
+
+`factory`可以是对象、字符串或者函数
+
+<br/>
+
+* 定义JSON数据模块
+{% highlight javascript %}
+define({'foo': 'bar'});
+{% endhighlight %}
+
+* 通过字符串定义模板模块
+{% highlight javascript %}
+define('this is {{data}}.');
+{% endhighlight %}
+
+* factory为函数的时候，表示模块的构造方法，执行构造方法便可以得到模块向外提供的接口
+{% highlight javascript %}
+define(function(require, exports, module) {
+    //模块代码
+});
+{% endhighlight %}
+
+* 当拥有两个以上参数时
+{% highlight javascript %}
+define('module', ['module1', 'module2'], function(require, exports, module) {
+    //模块代码
+});
+{% endhighlight %}
+
+从上面代码对比来看，CMD与AMD规范在define函数上用法不相同。
+
 
 
 
