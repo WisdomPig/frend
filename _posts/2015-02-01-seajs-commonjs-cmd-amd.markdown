@@ -115,7 +115,7 @@ define(function(require, exports, module) {
 });
 {% endhighlight %}
 
->###2.2 AMD的require函数
+>###2.2 AMD的factory中的require参数
 
 * require(String)
 {% highlight javascript %}
@@ -143,7 +143,7 @@ define(function(require){
 <br/>
 
 ###3. CMD规范
-CMD（Common Module Definition）规范是SeaJS的规范产出，明确了模块的基本书写格式和基本交互规则。
+CMD（Common Module Definition）规范是SeaJS遵循的规范，明确了模块的基本书写格式和基本交互规则。
 
 在该规范中，一个模块就是一个文件。
 
@@ -184,6 +184,84 @@ define('module', ['module1', 'module2'], function(require, exports, module) {
 {% endhighlight %}
 
 从上面代码对比来看，CMD与AMD规范在define函数上用法不相同。
+
+>###3.2 CMD的factory中的require参数
+
+* `require(id);`接受模块标识作为唯一的参数，用来获取其他模块提供的接口
+{% highlight javascript %}
+define(function(require, exports) {
+    var a = require('./a');
+    
+    a.doSomething();
+});
+{% endhighlight %}
+
+* `require.async(id, callback?);` require是同步往下执行的，需要的异步加载模块可以使用 require.async 来进行加载
+{% highlight javascript %}
+define(function(require, exports, module) {
+    require.async('.a', function(a) {
+        a.doSomething();
+    });
+});
+{% endhighlight %}
+
+>###3.3 CMD的factory中的exports参数
+
+* exports用来向外提供模块接口
+{% highlight javascript %}
+define(function(require, exports) {
+    exports.foo = 'bar';    //向外提供的属性
+    exports.do = function(){};  //向外提供的方法
+});
+{% endhighlight %}
+
+* 使用return直接向外提供接口
+{% highlight javascript %}
+define(function(require, exports) {
+    return{
+        foo: 'bar',    //向外提供的属性
+        do: function(){}   //向外提供的方法
+    }
+});
+{% endhighlight %}
+
+* 简化为直接对象字面量的形式
+{% highlight javascript %}
+define({
+    foo: 'bar',     //向外提供的属性
+    do: function(){}    //向外提供的方法
+});
+{% endhighlight %}
+
+* 与nodeJS中一样需要注意的情况
+{% highlight javascript %}
+//以下方式是错误的
+define(function(require, exports) {
+    exports = {
+        foo: 'bar',     //向外提供的属性
+        do: function(){}    //向外提供的方法
+    }
+});
+
+//正确写法
+define(function(require, exports, module) {
+    module.exports = {
+        foo: 'bar',     //向外提供的属性
+        do: function(){}   //向外提供的方法
+    }
+});
+{% endhighlight %}
+
+>###3.4 CMD的factory中的module参数
+
+* module 是factory的第三个参数，为一个对象，上面存储了一些与当前模块相关联的属性与方法
+
+{% highlight javascript %}
+module.id 为模块的唯一标识。
+module.uri 根据模块系统的路径解析规则得到模块的绝对路径。
+module.dependencies 表示模块的依赖。
+module.exports 当前模块对外提供的接口。
+{% endhighlight %}
 
 
 
