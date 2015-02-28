@@ -41,7 +41,7 @@ global.name = 'Frend';
 exports.name = 'Frend';
 
 exports.say = function() {
-	console.log(name);
+    console.log(name);
 }
 {% endhighlight %}
 
