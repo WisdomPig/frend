@@ -64,6 +64,8 @@ module_a.say(); //Frend
 AMD（Asynchronous Module Definition）规范则是异步加载模块，即模块的加载不会影响后面语句的运行。所有依赖于某些模块的语句均放在回调函数中执行。
 [AMD规范](https://github.com/amdjs/amdjs-api/wiki/AMD)
 
+<br/>
+
 >###2.1 AMD的全局变量 —— define函数
 
 ####define(id?, dependencies?, factory)
@@ -73,8 +75,6 @@ AMD（Asynchronous Module Definition）规范则是异步加载模块，即模�
 `dependencies` 可选参数，当前模块所依赖并已经被定义的模块标志的数组字面量。
 
 `factory` 一个模块需要执行一次的函数或者是分配了模块属性的的对象。
-
-<br/>
 
 * 创建模块标识为alpha的模块，依赖于require，export，和标识为beta的模块
 {% highlight javascript %}
@@ -115,6 +115,8 @@ define(function(require, exports, module) {
 });
 {% endhighlight %}
 
+<br/>
+
 >###2.2 AMD的factory中的require参数
 
 * require(String)
@@ -147,6 +149,8 @@ CMD（Common Module Definition）规范是SeaJS遵循的规范，明确了模块
 
 在该规范中，一个模块就是一个文件。
 
+<br/>
+
 >###3.1 CMD的全局变量 —— define函数
 
 ####define(id?, dependencies?, factory)
@@ -156,8 +160,6 @@ CMD（Common Module Definition）规范是SeaJS遵循的规范，明确了模块
 `dependencies`为可选参数，数组类型，表示当前模块的依赖。
 
 `factory`可以是对象、字符串或者函数
-
-<br/>
 
 * 定义JSON数据模块
 {% highlight javascript %}
@@ -185,6 +187,8 @@ define('module', ['module1', 'module2'], function(require, exports, module) {
 
 从上面代码对比来看，CMD与AMD规范在define函数上用法不相同。
 
+<br/>
+
 >###3.2 CMD的factory中的require参数
 
 * `require(id);`接受模块标识作为唯一的参数，用来获取其他模块提供的接口
@@ -204,6 +208,8 @@ define(function(require, exports, module) {
     });
 });
 {% endhighlight %}
+
+<br/>
 
 >###3.3 CMD的factory中的exports参数
 
@@ -251,6 +257,8 @@ define(function(require, exports, module) {
     }
 });
 {% endhighlight %}
+
+<br/>
 
 >###3.4 CMD的factory中的module参数
 
