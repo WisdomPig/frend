@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "seajs学习之路 - CommonJS、AMD与CMD"
-description: "学习seajs，了解前端js模块化编程，CommonJS、AMD与CMD的比较"
-keywords: "seajs, CMD, AMD, CommonJS, nodejs"
+title:  "SeaJS学习笔录 - CommonJS、AMD与CMD"
+description: "学习SeaJS，了解前端js模块化编程，CommonJS、AMD与CMD的比较"
+keywords: "SeaJS, CMD, AMD, CommonJS, RequireJS, Node.js"
 date:   2015-02-01 00:06:10
 categories: seajs
 ---
@@ -13,9 +13,9 @@ categories: seajs
 
 `--玉伯`
 
-第一次听说seajs，已经是两年前的事了，但一直没有机会让我意识到模块化对于前端开发的好处，所以也没有深入去了解使用seajs或者requirejs这类的模块加载器进行模块化编程。
+第一次听说SeaJS，已经是两年前的事了，但一直没有机会让我意识到模块化对于前端开发的好处，所以也没有深入去了解使用SeaJS或者RequireJS这类的模块加载器进行模块化编程。
 
-随着公司项目越来越大，不管是代码维护还是新功能模块的添加，都越显困难与无力。模块化编程现在已经非常成熟，很多大的公司项目已经在使用，例如QQ空间、淘宝等。模块化编程在发展过程中，已经形成了多套规范以及基于不同规范的框架。本博文是我在探讨这些规范以及模块化框架过程中记录的一些关键点，已作备忘使用。
+随着公司项目越来越大，不管是代码维护还是新功能模块的添加，都越显困难与无力。模块化编程现在已经非常成熟，很多大的公司项目已经在使用，例如QQ空间、淘宝等。模块化编程在发展过程中，已经形成了多套规范以及基于不同规范的框架。本博文是我在探讨这些规范以及模块化框架过程中的一些总结与记录，已作分享以及备忘使用。
 
 <br/>
 
@@ -143,6 +143,7 @@ define(function(require){
 <br/>
 
 ###3. CMD规范
+
 
 
 
