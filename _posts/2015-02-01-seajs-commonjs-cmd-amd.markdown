@@ -271,6 +271,58 @@ module.dependencies 表示模块的依赖。
 module.exports 当前模块对外提供的接口。
 {% endhighlight %}
 
+<br/>
+
+###4. AMD与CMD的区别
+
+下面是玉伯对于 AMD 与 CMD 区别的解释：
+
+AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。
+
+CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。
+
+AMD与CMD都是为了实现javascript的模块化开发，特别是在浏览器端。下面介绍两者的区别：
+
+1. 对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.
+
+2. CMD推崇依赖就近，AMD推崇依赖前置。
+
+* CMD推崇依赖就近，可以把依赖写进你的代码中的任意一行
+
+{% highlight javascript %}
+// CMD
+define(function(require, exports, module) {
+    var a = require('./a');
+    a.doSomething()
+    // ...
+    var b = require('./b') // 依赖可以就近书写
+    b.doSomething()
+    // ...
+});
+{% endhighlight %}
+
+代码在运行时，首先是不知道依赖的，需要遍历所有的require关键字，找出后面的依赖。具体做法是将function toString后，用正则匹配出require关键字后面的依赖。显然，这是一种牺牲性能来换取更多开发便利的方法。
+
+* AMD推崇依赖前置，在解析和执行当前模块之前，模块作者必须指明当前模块所依赖的模块
+
+{% highlight javascript %}
+// AMD
+define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
+    a.doSomething()
+    // ...
+    b.doSomething()
+    // ...
+});
+{% endhighlight %}
+
+代码在一旦运行到此处，能立即知晓依赖。而无需遍历整个函数体找到它的依赖，因此性能有所提升，缺点就是开发者必须显式得指明依赖——这会使得开发工作量变大，比如：当你写到函数体内部几百上千行的时候，忽然发现需要增加一个依赖，你不得不回到函数顶端来将这个依赖添加进数组。
+
+3. 对比
+
+|| 方案 || 优势 || 劣势 || 特点 ||
+|| AMD || 速度快 || 会浪费资源 || 预先加载所有的依赖，直到使用的时候才执行
+|| CMD || 只有真正需要才加载依赖 || 性能较差 || 直到使用的时候才定义依赖
+
 
 
 
